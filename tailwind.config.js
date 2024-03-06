@@ -26,6 +26,7 @@ export default {
         intro: "url('./src/assets/intro-bg.jpg')",
         radial:
           "radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(248,248,248,1) 50%, rgba(227,227,227,1) 100%)",
+        instagram: "linear-gradient( 90deg, #D300C5, #FF0069, #FF7A00 )",
       },
     },
   },

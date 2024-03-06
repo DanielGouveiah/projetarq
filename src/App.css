@@ -5,6 +5,30 @@
 }
 
 .home-main {
-  background-color: #6f1d1b;
-  background-image: url("./assets/topography.svg");
+  background: url("./assets/topography.svg"),
+    linear-gradient(to bottom, #6f1d1b 75%, #4a0a08);
+}
+
+.ants {
+  stroke: #fff;
+  stroke-dasharray: 8px 7px;
+  stroke-width: 1.5px;
+  shape-rendering: geometricPrecision;
+  stroke-dashoffset: 16px;
+  fill: none;
+  stroke-linecap: round;
+}
+
+.ants-dancing {
+  animation-name: dancing-ants;
+  animation-duration: 0.45s;
+  animation-direction: normal;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes dancing-ants {
+  100% {
+    stroke-dashoffset: 0;
+  }
 }
