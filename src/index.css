@@ -17,6 +17,26 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #a44240 #171717;
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 16px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #171717;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #a44240;
+  border-radius: 20px;
+}
+
 a {
   font-weight: 500;
   color: inherit;

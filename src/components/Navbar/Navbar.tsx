@@ -3,21 +3,53 @@ import logo from "../../assets/logo.png";
 import logoSm from "../../assets/logoSm.png";
 import { CaretRight } from "@phosphor-icons/react";
 import MobileMenu from "./MobileMenu";
+import { scrollToTop } from "../../utils/ScrollTo";
 
 interface nav {
   fixed: boolean;
 }
 
+interface links {
+  title: string;
+  id: string;
+  nav: boolean;
+}
+
 const Navbar = ({ fixed = false }: nav) => {
+  const links = [
+    { title: "Sobre", id: "about", nav: false },
+    { title: "Contatos", id: "contacts", nav: false },
+    { title: "Blog", id: "Blog", nav: true },
+  ];
+
+  const scrollPage = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      const top = element.getBoundingClientRect().top;
+      scrollToTop(top);
+      console.log(top);
+    }
+  };
+
   return (
     <header
       className={`z-50 grid ${
         fixed ? "fixed" : "absolute top-0"
       } grid-flow-col grid-cols-2 lg:grid-cols-3 w-full items-center py-1 px-2 sm:py-2 sm:px-6 md:px-12 xl:px-24`}>
       <nav className="justify-self-start hidden lg:flex gap-4 text-lg text-stone-800">
-        <NavLink to="/sobre">Sobre</NavLink>
-        <NavLink to="/contatos">Contatos</NavLink>
-        <NavLink to="/blog">Blog</NavLink>
+        {links.map(({ title, id, nav }: links) => {
+          return (
+            <div>
+              {!nav ? (
+                <a onClick={() => scrollPage(id)} className="cursor-pointer">
+                  {title}
+                </a>
+              ) : (
+                <NavLink to="/blog">{title}</NavLink>
+              )}
+            </div>
+          );
+        })}
       </nav>
 
       <NavLink to="/" className="flex justify-start lg:justify-center">
