@@ -9,9 +9,9 @@ const Ants = () => {
       <path
         d="M1 1.5V176.5"
         stroke="black"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-dasharray="4 4"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeDasharray="4 4"
         className="ants ants-dancing"
       />
     </svg>

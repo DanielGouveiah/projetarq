@@ -8,14 +8,14 @@ const Signature = () => {
       </h2>
 
       <div className="grid gap-4 sm:gap-10 sm:grid-cols-2 grid-rows-2 col-span-full p-4 justify-items-center">
-        <div className="grid sm:justify-self-end max-w-[320px] md:max-w-[420px] gap-6 justify-items-center bg-red-dark py-4 md:py-6 px-4 rounded-xl row-span-2 text-red-light hover:text-[#75CE56] transition-colors duration-1000">
+        <div className="grid sm:justify-self-end max-w-[320px] md:max-w-[420px] gap-6 justify-items-center bg-red-dark py-4 md:py-6 px-4 rounded-xl row-span-2 text-[#75CE56] sm:text-red-light sm:hover:text-[#75CE56] transition-colors duration-1000">
           <Plant size={64} />
           <p className="text-xl text-stone-100  leading-relaxed">
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ducimus
             esse assumenda illo perspiciatis, veniam blanditiis.
           </p>
         </div>
-        <div className="grid sm:justify-self-start max-w-[320px] md:max-w-[420px] gap-6 justify-items-center bg-red-dark py-6 px-4 rounded-xl row-span-2 text-red-light hover:text-[#DDB245] transition-colors duration-1000">
+        <div className="grid sm:justify-self-start max-w-[320px] md:max-w-[420px] gap-6 justify-items-center bg-red-dark py-6 px-4 rounded-xl row-span-2 text-[#DDB245]  sm:text-red-light sm:hover:text-[#DDB245] transition-colors duration-1000">
           <Coins size={64} />
           <p className="text-xl text-stone-100 leading-relaxed">
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ducimus
