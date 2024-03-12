@@ -69,13 +69,16 @@ const Intro = () => {
             onClick={() => {
               downloadEdition();
             }}
+            onTouchStart={() => {
+              downloadEdition();
+            }}
             href={edition}
             target="_blank"
             rel="noreferrer"
-            className={`py-2 px-4 rounded-full shadow-md text-xl hover:text-stone-400 ${
+            className={`py-2 px-4 rounded-full shadow-md text-xl ${
               downloaded
-                ? "bg-[#75CE56]  text-[#28521a] "
-                : "bg-red  text-stone-200"
+                ? "bg-[#75CE56] text-[#28521a] hover:text-[#28521a]"
+                : "bg-red text-stone-200  hover:text-stone-200"
             } cursor-pointer`}>
             {isDownloading && "Baixando..."}
             {downloaded && "Arquivo Baixado!"}

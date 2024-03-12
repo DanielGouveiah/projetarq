@@ -165,7 +165,7 @@ const ModalMenu = ({ callback }: modal) => {
         <div className="flex items-center justify-start">
           <button
             onClick={() => callback()}
-            className="py-6 pr-6 pl-1 text-stone-50 hover:text-red transition-colors duration-700 "
+            className="py-6 pr-6 pl-1 text-stone-50 bg-transparent hover:text-red transition-colors duration-700 "
             title="Fechar menu">
             <ArrowLeft size={32} weight="bold" />
           </button>
