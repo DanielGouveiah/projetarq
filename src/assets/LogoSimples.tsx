@@ -1,9 +1,10 @@
 interface logo {
   dark?: boolean;
   large?: boolean;
+  small?: boolean;
 }
 
-const LogoSimples = ({ dark = false, large = false }: logo) => {
+const LogoSimples = ({ dark = false, large = false, small = false }: logo) => {
   return (
     <svg
       width="210"
@@ -11,10 +12,14 @@ const LogoSimples = ({ dark = false, large = false }: logo) => {
       viewBox="0 0 210 106"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className={`transition-colors duration-700${
+      className={`transition-colors duration-700  ${
+        small
+          ? "max-w-[80px] md:max-w-[120px]"
+          : "max-w-[120px] sm:max-w-[80px] md:max-w-[120px]"
+      }  ${
         large
           ? "max-w-[120px] md:max-w-[240px]"
-          : "max-w-[80px] md:max-w-[120px]"
+          : "max-w-[120px] sm:max-w-[80px] md:max-w-[120px]"
       }  ${
         dark
           ? "fill-red-dark hover:fill-red stroke-red-dark hover:stroke-red"

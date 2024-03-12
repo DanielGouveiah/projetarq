@@ -45,7 +45,7 @@ const About = () => {
             </li>
             <li className="grid justify-center bg-red-dark  border-b-2 border-red rounded-xl rounded-l-none rounded-br-none py-2 ">
               <div className="grid w-[120px] md:w-[200px] justify-center gap-2 bg-red-dark py-2 px-10 rounded-xl">
-                <span className="text-xl md:text-2xl lg:text-3xl">6</span>
+                <span className="text-xl md:text-2xl lg:text-3xl">5</span>
                 <h3 className="text-stone-400 text-lg md:text-xl">
                   Integrantes
                 </h3>

@@ -1,5 +1,6 @@
 import {
   InstagramLogo,
+  PaperPlaneTilt,
   // PaperPlaneTilt,
   // PatreonLogo,
 } from "@phosphor-icons/react";
@@ -35,14 +36,15 @@ const Contacts = () => {
                   <InstagramLogo size={32} /> Instagram
                 </a>
               </li>
-              {/* <li className="rounded-sm border-b-2 border-red py-4">
+              <li className="rounded-sm border-b-2 border-transparent py-4">
                 <a
-                  href=""
+                  href="mailto:projetarqmagazine@gmail.com?subject=Gostaria de saber mais sobre o projeto"
                   target="_blank"
                   className="flex hover:text-red-light flex-col md:flex-row gap-2 sm:gap-4 text-lg md:text-xl items-center">
                   <PaperPlaneTilt size={32} /> Envie um Email
                 </a>
               </li>
+              {/* 
               <li className="rounded-sm border-b-2 border-transparent py-4">
                 <a
                   href=""
