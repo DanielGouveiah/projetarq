@@ -52,7 +52,6 @@ const ModalMenu = ({ callback }: modal) => {
         }
       };
 
-      console.log(e.touches[0].screenY - window.innerHeight);
       const diff = e.touches[0].screenY - window.innerHeight;
       slideMenu(diff);
 
@@ -112,7 +111,6 @@ const ModalMenu = ({ callback }: modal) => {
   const onMouseUp = React.useCallback(
     (e: MouseEvent) => {
       setDragging(false);
-      console.log(e);
       const diff = e.screenY - window.innerHeight;
       if (menuArea.current)
         if (diff > -window.innerHeight * 0.5) {

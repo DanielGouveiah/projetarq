@@ -11,7 +11,7 @@ export const showOnScroll = (data: string) => {
       const top = element.getBoundingClientRect().top;
       const data = element.getAttribute("data-animate");
       if (top < window.innerHeight * 0.8 && data == "true") {
-        console.log(element.setAttribute("data-animate", "false"));
+        element.setAttribute("data-animate", "false");
       }
     });
   };

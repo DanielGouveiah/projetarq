@@ -1,9 +1,26 @@
+import React from "react";
 import introImg from "../../assets/intro-img.jpg";
 import introFree from "../../assets/intro-free.png";
 import edition from "../../assets/edition.pdf";
 
 const Intro = () => {
-  // const [isDownloading, setisDownloading] = React.useState(false);
+  const [isDownloading, setIsDownloading] = React.useState(false);
+  const [downloaded, setDownloaded] = React.useState(false);
+
+  const downloadEdition = () => {
+    setIsDownloading(true);
+    fetch(edition).then((r: Response) => {
+      if (r) {
+        setIsDownloading(false);
+        setDownloaded(true);
+        setTimeout(() => {
+          setDownloaded(false);
+        }, 3000);
+        return;
+      }
+      console.log("Ocorreu um erro!");
+    });
+  };
 
   return (
     <article aria-label="Introdução" className="sticky top-0">
@@ -49,10 +66,20 @@ const Intro = () => {
         </div>
         <div data-animate>
           <a
-            download
+            onClick={() => {
+              downloadEdition();
+            }}
             href={edition}
-            className="py-2 px-4 rounded-full shadow-md text-xl text-stone-200 hover:text-stone-400 bg-red cursor-pointer">
-            Ver ultima edição
+            target="_blank"
+            rel="noreferrer"
+            className={`py-2 px-4 rounded-full shadow-md text-xl hover:text-stone-400 ${
+              downloaded
+                ? "bg-[#75CE56]  text-[#28521a] "
+                : "bg-red  text-stone-200"
+            } cursor-pointer`}>
+            {isDownloading && "Baixando..."}
+            {downloaded && "Arquivo Baixado!"}
+            {!isDownloading && !downloaded && "Ver última edição"}
           </a>
         </div>
       </section>
