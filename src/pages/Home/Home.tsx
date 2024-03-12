@@ -4,6 +4,7 @@ import Intro from "./Intro";
 import Main from "./Main";
 import Navbar from "../../components/Navbar/Navbar";
 import ModalMenu from "../../components/Navbar/ModalMenu";
+import { showOnScroll } from "../../utils/showOnScroll";
 
 const Home = () => {
   const [menuOpen, setMenuOpen] = React.useState(false);
@@ -17,9 +18,13 @@ const Home = () => {
       document.body.style.overflow = "hidden";
       document.body.style.paddingRight = "8px";
     } else {
-      document.body.style.overflow = "scroll";
+      document.body.style.overflow = "initial";
       document.body.style.paddingRight = "0px";
     }
+  }, [menuOpen]);
+
+  React.useEffect(() => {
+    showOnScroll("data-animate");
   });
 
   return (

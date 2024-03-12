@@ -32,3 +32,14 @@
     stroke-dashoffset: 0;
   }
 }
+
+[data-animate="true"] {
+  opacity: 0;
+  transform: translate3d(0, -30px, 0);
+}
+
+[data-animate="false"] {
+  opacity: initial;
+  transform: translate3d(0, 0, 0);
+  transition: 0.1s linear;
+}
