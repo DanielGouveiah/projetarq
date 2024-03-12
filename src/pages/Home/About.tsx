@@ -3,18 +3,22 @@ import Ants from "../../assets/Ants";
 const About = () => {
   return (
     <section
-      className="relative py-20 px-2 sm:px-10 grid grid-cols-2 md:grid-cols-4 gap-y-14 md:gap-y-20"
+      className="relative py-10 sm:py-20 px-2 sm:px-10 grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-y-14 md:gap-y-20"
       id="about">
-      <div className="absolute -top-6 left-1/2 ">
+      <div className="absolute -top-16 sm:-top-6 left-1/2 " data-animate>
         <Ants />
       </div>
 
-      <h2 className="text-3xl md:text-5xl font-semibold text-stone-50 col-span-2 md:col-span-2 md:col-start-2">
+      <h2
+        className="text-3xl md:text-5xl font-semibold text-stone-50 col-span-2 md:col-span-2 md:col-start-2"
+        data-animate>
         Sobre nós
       </h2>
 
       <div className=" text-stone-50 col-span-full grid md:grid-cols-4 justify-center gap-y-4 py-6">
-        <div className="grid gap-6 col-start-2 col-span-2 sm:text-start leading-loose text-lg bg-red-dark p-6 rounded-xl">
+        <div
+          className="grid gap-6 col-start-2 col-span-2 leading-loose text-base sm:text-lg bg-red-dark p-6 rounded-xl"
+          data-animate>
           <p>
             Nasceu em{" "}
             <span className="text-emerald-300">Recife, Pernambuco</span>, a
@@ -25,7 +29,7 @@ const About = () => {
             identidade pernambucana.
           </p>
 
-          <div className="grid justify-center">
+          <div className="grid justify-center" data-animate>
             <a
               rel="noopener"
               href="https://www.instagram.com/projet.arq_magazine/"
@@ -35,7 +39,9 @@ const About = () => {
           </div>
         </div>
 
-        <div className="grid md:col-start-2 col-span-3 md:col-span-2 ">
+        <div
+          className="grid md:col-start-2 col-span-3 md:col-span-2"
+          data-animate>
           <ul className="grid grid-cols-2 gap-y-0 py-10">
             <li className="grid justify-center bg-red-dark border-r-2 border-b-2 border-red rounded-xl rounded-r-none rounded-bl-none py-2">
               <div className="grid w-[120px] md:w-[200px] justify-center gap-2 bg-red-dark py-2 px-10 rounded-xl">
@@ -71,7 +77,7 @@ const About = () => {
         </div>
       </div>
 
-      <div className="absolute -bottom-6 left-1/2 ">
+      <div className="absolute -bottom-6 left-1/2" data-animate>
         <Ants />
       </div>
     </section>

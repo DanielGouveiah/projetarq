@@ -20,7 +20,7 @@ const Navbar = ({ fixed = false, callback }: nav) => {
   const links = [
     { title: "Sobre", id: "about", nav: false },
     { title: "Contatos", id: "contacts", nav: false },
-    { title: "Blog", id: "Blog", nav: true },
+    { title: "instagram", id: "instagram", nav: true },
   ];
 
   const scrollPage = (id: string) => {
@@ -46,7 +46,12 @@ const Navbar = ({ fixed = false, callback }: nav) => {
                   {title}
                 </a>
               ) : (
-                <NavLink to="/blog">{title}</NavLink>
+                <a
+                  rel="noopener"
+                  href="https://www.instagram.com/projet.arq_magazine/"
+                  target="_blank">
+                  {title}
+                </a>
               )}
             </div>
           );
@@ -68,10 +73,10 @@ const Navbar = ({ fixed = false, callback }: nav) => {
       </NavLink>
 
       <NavLink
-        to="/contatos"
+        to="/blog"
         className="justify-self-end hidden md:flex items-center gap-1 text-xl font-regular text-red hover:text-red-dark">
         <span className="relative after:bottom-0.5 after:block after:w-2/3 after:h-[2px] after:bg-current after:absolute after:rounded-md">
-          Começar
+          Nosso Blog
         </span>
         <CaretRight weight="bold" />
       </NavLink>

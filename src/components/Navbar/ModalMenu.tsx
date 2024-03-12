@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { ArrowBendUpLeft, HandGrabbing } from "@phosphor-icons/react";
 import { NavLink } from "react-router-dom";
 import { scrollToTop } from "../../utils/ScrollTo";
@@ -25,7 +25,17 @@ const links = [
 
 const ModalMenu = ({ callback }: modal) => {
   const [dragging, setDragging] = React.useState(false);
+  const [handVisible, setHandVisible] = React.useState(false);
   const menuArea = React.useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setHandVisible((last) => !last);
+    }, 5000);
+    return () => {
+      clearInterval(interval);
+    };
+  });
 
   const onMouseMove = React.useCallback(
     (e: MouseEvent) => {
@@ -59,7 +69,7 @@ const ModalMenu = ({ callback }: modal) => {
       if (menuArea.current)
         if (diff > -400) {
           menuArea.current.style.transform = `translate(0px, 0px)`;
-        } else if (diff <= -400) {
+        } else if (diff < -400) {
           const elementHeight = menuArea.current.offsetHeight;
           menuArea.current.style.transform = `translate(0px, -${elementHeight}px)`;
           setTimeout(() => {
@@ -99,7 +109,7 @@ const ModalMenu = ({ callback }: modal) => {
         <div className="flex items-center justify-start">
           <button
             onClick={() => callback()}
-            className="py-6 px-4 text-stone-50 hover:text-red transition-colors duration-700 "
+            className="py-6 pr-6 pl-1 text-stone-50 hover:text-red transition-colors duration-700 "
             title="Fechar menu">
             <ArrowBendUpLeft size={32} weight="bold" />
           </button>
@@ -112,7 +122,7 @@ const ModalMenu = ({ callback }: modal) => {
       </div>
 
       <div className="grid items-center grid-rows-menu gap-10 text-2xl bg-stone-900 w-full h-full px-6 py-2">
-        <nav className="grid gap-1 max-h-[40vh]">
+        <nav className="grid gap-1 max-h-[40vh] select-none">
           {links.map(({ name, path, target }) => {
             return path ? (
               <NavLink
@@ -136,7 +146,12 @@ const ModalMenu = ({ callback }: modal) => {
         <div
           className=" flex items-center justify-center text-stone-50 animate-bounce"
           onMouseDown={() => menuDragInit()}>
-          <HandGrabbing size={48} />
+          <div
+            className={`${
+              handVisible ? "opacity-100" : "opacity-0"
+            } transition-opacity`}>
+            <HandGrabbing size={48} />
+          </div>
         </div>
       </div>
     </div>
