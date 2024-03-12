@@ -1,12 +1,14 @@
 import introImg from "../../assets/intro-img.jpg";
 import introFree from "../../assets/intro-free.png";
-import Navbar from "../../components/Navbar/Navbar";
+import edition from "../../assets/edition.pdf";
+import React from "react";
 
 const Intro = () => {
+  // const [isDownloading, setisDownloading] = React.useState(false);
+
   return (
     <article aria-label="Introdução" className="sticky top-0">
       <section className="flex flex-col gap-40 sm:gap-48 md:gap-16 pt-44 pb-20 md:pt-28 md:pb-16 xl:pt-48 xl:pb-28 bg-cover bg-no-repeat bg-fixed bg-intro md:bg-radial ">
-        <Navbar fixed={false} />
         {/*Intro when it's in pc or medium screens*/}
         <div className=" hidden md:flex relative flex-col sm:text-3xl md:text-5xl xl:text-6xl font-semibold">
           <div className="grid gap-4 text-stone-900 drop-shadow-md">
@@ -39,9 +41,9 @@ const Intro = () => {
         </div>
         <div>
           <a
-            href=""
-            download={introFree}
-            className="py-2 px-4 rounded-full shadow-md text-xl text-stone-200 hover:text-stone-400 bg-red">
+            download
+            href={edition}
+            className="py-2 px-4 rounded-full shadow-md text-xl text-stone-200 hover:text-stone-400 bg-red cursor-pointer">
             Ver ultima edição
           </a>
         </div>

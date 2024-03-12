@@ -7,6 +7,7 @@ import { scrollToTop } from "../../utils/ScrollTo";
 
 interface nav {
   fixed: boolean;
+  callback: () => void;
 }
 
 interface links {
@@ -15,7 +16,7 @@ interface links {
   nav: boolean;
 }
 
-const Navbar = ({ fixed = false }: nav) => {
+const Navbar = ({ fixed = false, callback }: nav) => {
   const links = [
     { title: "Sobre", id: "about", nav: false },
     { title: "Contatos", id: "contacts", nav: false },
@@ -39,7 +40,7 @@ const Navbar = ({ fixed = false }: nav) => {
       <nav className="justify-self-start hidden lg:flex gap-4 text-lg text-stone-800">
         {links.map(({ title, id, nav }: links) => {
           return (
-            <div>
+            <div key={title}>
               {!nav ? (
                 <a onClick={() => scrollPage(id)} className="cursor-pointer">
                   {title}
@@ -75,7 +76,7 @@ const Navbar = ({ fixed = false }: nav) => {
         <CaretRight weight="bold" />
       </NavLink>
 
-      <MobileMenu />
+      <MobileMenu callback={callback} />
     </header>
   );
 };
