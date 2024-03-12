@@ -10,7 +10,7 @@ const MobileMenu = ({ callback }: menu) => {
         type="button"
         title="botão de menu"
         onClick={() => callback()}
-        onTouchEnd={() => callback()}
+        onTouchStart={() => callback()}
         className="text-stone-50 py-4 pl-20 pr-4">
         <List size={32} weight="bold" />
       </button>

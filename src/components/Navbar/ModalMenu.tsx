@@ -186,7 +186,7 @@ const ModalMenu = ({ callback }: modal) => {
                 to={path}
                 key={name}
                 onClick={() => menuNav()}
-                onTouchEnd={() => menuNav()}
+                onTouchStart={() => menuNav()}
                 className="flex items-center border-b-2  border-transparent py-6 justify-center  text-red-light">
                 {name}
               </NavLink>
