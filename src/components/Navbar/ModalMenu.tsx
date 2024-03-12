@@ -1,5 +1,5 @@
 import React from "react";
-import { ArrowBendUpLeft, DotsNine } from "@phosphor-icons/react";
+import { ArrowBendUpLeft, HandGrabbing } from "@phosphor-icons/react";
 import { NavLink } from "react-router-dom";
 import { scrollToTop } from "../../utils/ScrollTo";
 import LogoSimples from "../../assets/LogoSimples";
@@ -111,22 +111,22 @@ const ModalMenu = ({ callback }: modal) => {
         </div>
       </div>
 
-      <div className="grid grid-rows-menu gap-1 text-2xl bg-stone-900 w-full h-full px-6 py-2">
-        <nav className="grid gap-4">
+      <div className="grid items-center grid-rows-menu gap-10 text-2xl bg-stone-900 w-full h-full px-6 py-2">
+        <nav className="grid gap-1 max-h-[40vh]">
           {links.map(({ name, path, target }) => {
             return path ? (
               <NavLink
                 to={path}
                 key={name}
                 onClick={() => menuNav()}
-                className="flex items-center justify-center rounded-3xl text-red-light">
+                className="flex items-center border-b-2  border-transparent py-6 justify-center  text-red-light">
                 {name}
               </NavLink>
             ) : (
               <a
                 key={name}
                 onClick={() => menuNav(true, target)}
-                className="flex items-center justify-center rounded-3xl text-red-light cursor-pointer">
+                className="flex items-center py-6  border-b-2  border-red-light hover:border-red justify-center  text-red-light cursor-pointer">
                 {name}
               </a>
             );
@@ -134,9 +134,9 @@ const ModalMenu = ({ callback }: modal) => {
         </nav>
 
         <div
-          className=" flex items-center justify-center text-red"
+          className=" flex items-center justify-center text-stone-50 animate-bounce"
           onMouseDown={() => menuDragInit()}>
-          <DotsNine size={64} />
+          <HandGrabbing size={48} />
         </div>
       </div>
     </div>
