@@ -173,7 +173,7 @@ const ModalMenu = ({ callback }: modal) => {
           </button>
         </div>
         <div className="flex justify-end">
-          <a href="" title="Logo" className="translate-y-1">
+          <a title="Logo" className="translate-y-1">
             <LogoSimples small />
           </a>
         </div>
