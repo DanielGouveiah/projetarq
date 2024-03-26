@@ -1,12 +1,16 @@
 import { NavLink } from "react-router-dom";
-import LogoSimples from "../assets/LogoSimples";
+import underConstruction from "../assets/underconstruction.svg";
 
 const Blog = () => {
   return (
     <div className="bg-radial h-screen grid justify-items-center items-center box-border ">
       <div className="grid gap-10 py-20 max-w-[400px] justify-items-center ">
         <NavLink to="/">
-          <LogoSimples dark large />
+          <img
+            src={underConstruction}
+            alt=""
+            className="sm:max-w-lg md:max-w-xs"
+          />
         </NavLink>
         <div>
           <h1>Em breve!</h1>

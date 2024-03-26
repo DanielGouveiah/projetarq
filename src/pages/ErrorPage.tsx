@@ -1,5 +1,5 @@
 import { NavLink, useNavigate } from "react-router-dom";
-import LogoSimples from "../assets/LogoSimples";
+import notFound from "../assets/notfound.svg";
 import React from "react";
 
 const ErrorPage = () => {
@@ -29,7 +29,11 @@ const ErrorPage = () => {
     <div className="bg-radial h-screen grid justify-items-center items-center box-border ">
       <div className="grid gap-10 py-20 max-w-[400px] justify-items-center ">
         <NavLink to="/">
-          <LogoSimples dark large />
+          <img
+            src={notFound}
+            alt="Pagina não encontrada"
+            className="sm:max-w-lg md:max-w-xs"
+          />
         </NavLink>
         <div>
           <h1 className=" text-7xl sm:text-8xl">404</h1>
