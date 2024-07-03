@@ -29,7 +29,10 @@ const BlogItem = ({ value, color, lastOne }: Post) => {
         <div
           className={`grid gap-2 ${color} text-stone-100 text-start md:right-1/4 md:top-1/3 py-4 px-6 rounded shadow-blogItem`}>
           <h2 className="text-2xl ">{value.title}</h2>
-          <span>Tempo de leitura: {value.read_time} minutos</span>
+          <span>
+            Tempo de leitura: {value.read_time}{" "}
+            {Number(value.read_time) > 1 ? "minutos" : "minuto"}
+          </span>
           <span>
             Por <span className="font-semibold">{value.author}</span>
           </span>
