@@ -1,5 +1,5 @@
 export const showOnScroll = (data: string) => {
-  let timeout: number;
+  let timeout: string | number | NodeJS.Timeout | undefined;
   const elements = document.querySelectorAll(`[${data}]`);
 
   document.removeEventListener("scroll", () =>
