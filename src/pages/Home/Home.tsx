@@ -4,7 +4,6 @@ import Intro from "./Intro";
 import Main from "./Main";
 import Navbar from "../../components/Navbar/Navbar";
 import ModalMenu from "../../components/Navbar/ModalMenu";
-import { showOnScroll } from "../../utils/showOnScroll";
 
 const Home = () => {
   const [menuOpen, setMenuOpen] = React.useState(false);
@@ -23,9 +22,9 @@ const Home = () => {
     }
   }, [menuOpen]);
 
-  React.useEffect(() => {
-    showOnScroll("data-animate");
-  });
+  // React.useEffect(() => {
+  //   showOnScroll("data-animate");
+  // });
 
   return (
     <>

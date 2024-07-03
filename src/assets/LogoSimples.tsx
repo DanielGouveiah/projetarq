@@ -1,18 +1,33 @@
 interface logo {
   dark?: boolean;
+  light?: boolean;
+  extraLarge?: boolean;
   large?: boolean;
   small?: boolean;
+  extraSmall?: boolean;
 }
 
-const LogoSimples = ({ dark = false, large = false, small = false }: logo) => {
+const LogoSimples = ({
+  dark = false,
+  light = false,
+  extraLarge = false,
+  large = false,
+  small = false,
+  extraSmall = false,
+}: logo) => {
   return (
     <svg
       width="210"
       height="106"
       viewBox="0 0 210 106"
+      preserveAspectRatio="xMinYMid meet"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className={`transition-colors duration-700  ${
+      className={`resize ${
+        extraSmall
+          ? "max-w-[40px] md:max-w-[80px]"
+          : "max-w-[120px] sm:max-w-[80px] md:max-w-[120px]"
+      }  ${
         small
           ? "max-w-[80px] md:max-w-[120px]"
           : "max-w-[120px] sm:max-w-[80px] md:max-w-[120px]"
@@ -20,9 +35,17 @@ const LogoSimples = ({ dark = false, large = false, small = false }: logo) => {
         large
           ? "max-w-[120px] md:max-w-[240px]"
           : "max-w-[120px] sm:max-w-[80px] md:max-w-[120px]"
+      } ${
+        extraLarge
+          ? "max-w-[120px] md:max-w-[320px]"
+          : "max-w-[120px] sm:max-w-[80px] md:max-w-[120px]"
       }  ${
         dark
           ? "fill-red-dark hover:fill-red stroke-red-dark hover:stroke-red"
+          : "fill-stone-50 hover:fill-red-light stroke-stone-50 hover:stroke-red-light"
+      } ${
+        light
+          ? "fill-stone-50 hover:fill-stone-200 stroke-stone-50 hover:stroke-stone-200"
           : "fill-stone-50 hover:fill-red-light stroke-stone-50 hover:stroke-red-light"
       }`}>
       <path

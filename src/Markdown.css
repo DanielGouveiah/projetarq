@@ -1,0 +1,294 @@
+.markdown * {
+  margin: 0;
+  padding: 0;
+}
+
+.markdown img {
+  width: 100%;
+  margin-top: 2rem;
+  border-radius: 0.5rem;
+  filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.2));
+}
+
+.markdown img + em {
+  display: block;
+  width: 100%;
+  font-size: 0.875rem;
+  padding: 0.5rem 0 1rem;
+  text-align: center;
+  color: #565656;
+}
+
+.markdown img + em::after {
+  content: ")";
+}
+
+.markdown img + em::before {
+  content: "(";
+}
+
+.markdown blockquote p {
+  text-align: justify;
+  font-style: italic;
+  line-height: 1.2rem;
+}
+.markdown blockquote p em {
+  display: block;
+  color: rgba(0, 0, 0, 0.8);
+  font-weight: 600;
+  padding: 1rem 0 0;
+  width: 100%;
+}
+
+.markdown abbr,
+.markdown acronym,
+.markdown blockquote,
+.markdown code,
+.markdown dir,
+.markdown kbd,
+.markdown listing,
+.markdown plaintext,
+.markdown q,
+.markdown samp,
+.markdown tt,
+.markdown var,
+.markdown xmp {
+  hyphens: none;
+}
+
+.markdown {
+  font-family: "Merriweather", serif;
+  color: #121212;
+  hyphens: auto;
+  word-wrap: break-word;
+}
+
+.markdown > :first-child {
+  margin-top: 0;
+}
+
+/* @group Headings */
+
+.markdown h1,
+.markdown h2,
+.markdown h3,
+.markdown h4,
+.markdown h5,
+.markdown h6 {
+  line-height: 1;
+  margin: 0;
+  margin-top: 1.5rem;
+  text-rendering: optimizeLegibility;
+}
+
+.markdown h1 {
+  font-size: 2.75rem;
+}
+.markdown h2 {
+  font-size: 2rem;
+}
+.markdown h3 {
+  font-size: 1.65rem;
+}
+.markdown h4 {
+  font-size: 1.25rem;
+}
+.markdown h5 {
+  font-size: 1.1rem;
+}
+.markdown h6 {
+  font-size: 1rem;
+}
+
+.markdown h2 em,
+.markdown h3 em {
+  color: grey;
+}
+
+/* @end */
+
+.markdown small {
+  font-size: 65%;
+}
+
+.markdown p {
+  margin-top: 0.75rem;
+  text-align: justify;
+  color: #262626;
+}
+
+.markdown p strong {
+  font-weight: 700;
+  color: #121212;
+}
+
+.markdown hr {
+  margin: 0.75rem 0;
+
+  opacity: 0.5;
+}
+
+.markdown ol,
+.markdown ul {
+  margin-top: 0.75rem;
+  padding-left: 1rem;
+  list-style: disc;
+  text-align: start;
+}
+
+.markdown ol ul,
+.markdown ol ol,
+.markdown ul ul,
+.markdown ul ol {
+  margin-left: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+.markdown li {
+  margin: 0.5em 0;
+}
+
+.markdown abbr {
+  font-variant: small-caps;
+  font-weight: 600;
+  text-transform: lowercase;
+  color: #808080;
+}
+
+.markdown abbr[title]:hover {
+  cursor: help;
+}
+
+/* @group Block Quotes */
+
+.markdown blockquote {
+  border-left: 5px solid rgba(0, 0, 0, 0.2);
+  font-size: 0.875rem;
+  color: rgba(0, 0, 0, 0.8);
+  padding-left: 0.75em;
+  margin-left: calc(-0.75em - 5px);
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  font-style: italic;
+}
+
+.markdown blockquote + figcaption {
+  display: block;
+  margin-top: -1.5rem;
+  margin-bottom: 1.5rem;
+
+  font-size: 75%;
+}
+
+.markdown blockquote + figcaption:before {
+  content: "— ";
+
+  opacity: 0.05;
+}
+
+/* @end */
+
+/* @group Pre-formatted and Code */
+
+.markdown pre {
+  overflow: auto;
+
+  margin: 0.75rem 0;
+  padding: 0.5rem;
+
+  font-size: 0.875em;
+  white-space: pre;
+
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.markdown code {
+  padding: 0 0.25em;
+
+  white-space: pre;
+  font-family: Source Code Pro, monospace;
+
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.markdown pre code {
+  padding: 0;
+
+  word-wrap: normal;
+  white-space: pre-wrap;
+}
+
+.markdown pre code,
+.markdown pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+/* @end */
+
+/* @group Tables */
+
+.markdown table {
+  margin: 0.75rem 0;
+  padding: 0;
+
+  border-collapse: collapse;
+}
+.markdown table tr {
+  margin: 0;
+  padding: 0;
+
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+.markdown table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+.markdown table tr th {
+  margin: 0;
+  padding: 0.35em 0.75em;
+
+  font-weight: bold;
+  text-align: left;
+
+  border: 1px solid #ccc;
+}
+
+.markdown table tr td {
+  margin: 0;
+  padding: 0.35em 0.75em;
+
+  text-align: left;
+
+  border: 1px solid #ccc;
+}
+
+.markdown table tr th :first-child,
+.markdown table tr td :first-child {
+  margin-top: 0;
+}
+.markdown table tr th :last-child,
+.markdown table tr td :last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 600px) {
+  .markdown h1,
+  .markdown h2,
+  .markdown h3,
+  .markdown h4,
+  .markdown h5,
+  .markdown h6 {
+    text-align: start;
+  }
+
+  .markdown {
+    text-align: justify;
+    padding: 0 1rem;
+  }
+}

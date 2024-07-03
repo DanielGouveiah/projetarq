@@ -21,18 +21,12 @@ const Signature = () => {
 
   return (
     <section className="py-20 px-2 sm:px-10 grid  grid-cols-2 md:grid-cols-4 gap-y-14 md:gap-y-20">
-      <h2
-        className="text-3xl md:text-5xl font-semibold text-stone-50 col-span-2 md:col-span-2 md:col-start-2"
-        data-animate>
+      <h2 className="text-3xl md:text-5xl font-semibold text-stone-50 col-span-2 md:col-span-2 md:col-start-2">
         Descomplique seu acesso.
       </h2>
 
-      <div
-        className="grid gap-4 sm:gap-10 sm:grid-cols-2 grid-rows-2 col-span-full p-4 justify-items-center"
-        data-animate>
-        <div
-          className="grid sm:justify-self-end max-w-[320px] md:max-w-[420px] gap-6 justify-items-center bg-red-dark py-4 md:py-6 px-4 rounded-xl row-span-2 text-[#75CE56] sm:text-red-light sm:hover:text-[#75CE56] transition-colors duration-1000"
-          data-animate>
+      <div className="grid gap-4 sm:gap-10 sm:grid-cols-2 grid-rows-2 col-span-full p-4 justify-items-center">
+        <div className="grid sm:justify-self-end max-w-[320px] md:max-w-[420px] gap-6 justify-items-center bg-red-dark py-4 md:py-6 px-4 rounded-xl row-span-2 text-[#75CE56] sm:text-red-light sm:hover:text-[#75CE56] transition-colors duration-1000">
           <Plant className="text-5xl sm:text-6xl" />
           <p className="text-lg sm:text-xl text-stone-100  leading-relaxed">
             Projeto de Estudantes para Estudantes e Profissionais.{" "}
@@ -42,9 +36,7 @@ const Signature = () => {
             </span>
           </p>
         </div>
-        <div
-          className="grid sm:justify-self-start max-w-[320px] md:max-w-[420px] gap-6 justify-items-center bg-red-dark py-6 px-4 rounded-xl row-span-2 text-[#DDB245]  sm:text-red-light sm:hover:text-[#DDB245] transition-colors duration-1000"
-          data-animate>
+        <div className="grid sm:justify-self-start max-w-[320px] md:max-w-[420px] gap-6 justify-items-center bg-red-dark py-6 px-4 rounded-xl row-span-2 text-[#DDB245]  sm:text-red-light sm:hover:text-[#DDB245] transition-colors duration-1000">
           <Coins className="text-5xl sm:text-6xl" />
           <p className="text-lg sm:text-xl text-stone-100 leading-relaxed">
             Novidades e histórias da Arquitetura na palma da mão.{" "}

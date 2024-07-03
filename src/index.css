@@ -51,8 +51,6 @@ body {
   display: grid;
   min-width: 320px;
   min-height: 100vh;
-  -webkit-user-select: none;
-  user-select: none;
 }
 
 h1 {

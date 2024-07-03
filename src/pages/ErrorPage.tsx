@@ -1,16 +1,14 @@
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import notFound from "../assets/notfound.svg";
 import React from "react";
 
 const ErrorPage = () => {
   const [time, setTime] = React.useState(10);
-  const navigate = useNavigate();
-
   const countDown = () => {
     const interval = setInterval(() => {
       if (time <= 1) {
         clearInterval(interval);
-        navigate("/");
+        history.back();
         return;
       }
 
@@ -47,7 +45,7 @@ const ErrorPage = () => {
         </div>
 
         <div className="max-w-[400px] flex flex-col gap-4 justify-self-center text-lg">
-          <p>Redirecionando para o início em {time}s...</p>
+          <p>Voltando em {time}s...</p>
         </div>
       </div>
     </div>
