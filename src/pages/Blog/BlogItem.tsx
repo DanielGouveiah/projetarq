@@ -19,7 +19,7 @@ const BlogItem = ({ value, color, lastOne }: Post) => {
       state={value}
       className={`grid ${lastOne ? "col-span-full justify-center" : " "}`}>
       <div
-        className={`grid grid-rows-items md:grid-rows-2 box-border w-full ${
+        className={`grid grid-rows-2 box-border w-full ${
           lastOne ? "max-w-[560px]" : ""
         }`}>
         <div

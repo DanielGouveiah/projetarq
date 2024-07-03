@@ -25,7 +25,6 @@ export default {
       },
       gridTemplateRows: {
         menu: "1fr minmax(4rem, 6rem)",
-        items: "minmax(120px, 10vw) minmax(200px, 1fr)",
       },
       gridTemplateColumns: {
         blog: "2fr 1fr",
