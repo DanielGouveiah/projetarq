@@ -3,15 +3,14 @@ import {
   collection,
   getDocs,
   getFirestore,
-  limitToLast,
   orderBy,
   query,
   where,
 } from "firebase/firestore";
 import { DocumentData } from "firebase/firestore/lite";
-import { useCallback } from "react";
+import { useCallback, useState } from "react";
 
-const FirebaseInit = (type: "edition" | "blog") => {
+const FirebaseInit = () => {
   const firebaseConfig = {
     apiKey: "AIzaSyABvcvbjlRwoMPlVGrLNU2t599kZZfcVvo",
     authDomain: "projetarq-magazine.firebaseapp.com",
@@ -27,23 +26,24 @@ const FirebaseInit = (type: "edition" | "blog") => {
   const app = initializeApp(firebaseConfig);
   const db = getFirestore(app);
 
-  const getEdition = useCallback(async (): Promise<DocumentData> => {
+  const [loading, setLoading] = useState(false);
+
+  const getEditions = useCallback(async (): Promise<DocumentData> => {
     const q = query(
       collection(db, "edicoes"),
-      where("publicado", "==", true),
-      orderBy("data"),
-      limitToLast(1)
+      where("published", "==", true),
+      orderBy("release_date")
     );
     const querySnapshot = await getDocs(q);
-    const edition = querySnapshot.docs.map((doc) => doc.data());
-    return edition[0];
+    const editions = querySnapshot.docs.map((doc) => doc.data());
+    return editions.reverse();
   }, [db]);
 
   const getBlogs = useCallback(async (): Promise<DocumentData> => {
     const q = query(
       collection(db, "blog"),
       where("published", "==", true),
-      orderBy("last_update")
+      orderBy("created_at")
     );
     const querySnapshot = await getDocs(q);
     const edition = querySnapshot.docs.map((doc) => {
@@ -55,19 +55,23 @@ const FirebaseInit = (type: "edition" | "blog") => {
   }, [db]);
 
   const init = useCallback(async () => {
-    let value;
-    switch (type) {
-      case "edition":
-        value = await getEdition();
-        break;
-      case "blog":
-        value = await getBlogs();
-        break;
-    }
-    return value;
-  }, [type, getEdition, getBlogs]);
+    setLoading(true);
+    const editions = await getEditions();
+    const blogs = await getBlogs();
 
-  return { init };
+    const data = {
+      editions,
+      blogs,
+    };
+
+    console.log(data);
+
+    setLoading(false);
+
+    return data;
+  }, [getBlogs, getEditions]);
+
+  return { init, loading };
 };
 
 export default FirebaseInit;

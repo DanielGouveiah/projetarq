@@ -1,15 +1,19 @@
 import React from "react";
-import Footer from "../../components/Footer/Footer";
-import Intro from "./Intro";
-import Main from "./Main";
 import Navbar from "../../components/Navbar/Navbar";
 import ModalMenu from "../../components/Navbar/ModalMenu";
+import Intro from "./Intro/Intro";
+import IntroEdtions from "./Intro/Editions/IntroEdtions";
+import Social from "./Social";
+import Footer from "../../components/Footer/Footer";
+import Newsletter from "./Newsletter";
+import About from "./About";
+import AboutBlog from "./AboutBlog";
 
 const Home = () => {
   const [menuOpen, setMenuOpen] = React.useState(false);
 
   const ChangeIsOpen = () => {
-    setMenuOpen(!menuOpen);
+    setMenuOpen((v) => !v);
   };
 
   React.useEffect(() => {
@@ -28,10 +32,14 @@ const Home = () => {
 
   return (
     <>
-      <Navbar fixed={true} callback={ChangeIsOpen} />
+      <Navbar callback={ChangeIsOpen} />
       <Intro />
-      <Main />
-      <Footer />
+      <IntroEdtions />
+      <Social />
+      <Newsletter />
+      <AboutBlog />
+      <About />
+      <Footer dark />
       {menuOpen && <ModalMenu callback={ChangeIsOpen} />}
     </>
   );

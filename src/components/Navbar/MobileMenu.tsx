@@ -5,16 +5,17 @@ interface menu {
 }
 const MobileMenu = ({ callback }: menu) => {
   return (
-    <div className="flex md:hidden justify-end">
-      <button
-        type="button"
-        title="botão de menu"
-        onClick={() => callback()}
-        onTouchStart={() => callback()}
-        className="text-stone-50 py-4 pl-20 pr-4">
-        <List size={32} weight="bold" />
-      </button>
-    </div>
+    <button
+      type="button"
+      title="botão de menu"
+      onClick={() => callback()}
+      className="text-stone-50 py-4 flex justify-start">
+      <List
+        size={24}
+        weight="bold"
+        className="md:hover:scale-110 transition-all"
+      />
+    </button>
   );
 };
 

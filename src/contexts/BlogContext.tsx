@@ -1,5 +1,18 @@
-import { createContext } from "react";
+import { createContext, ReactNode } from "react";
+import { IPosts, IEditions } from "../Types/Types";
 
-const BlogContext = createContext<object[]>([]);
+export const BlogContext = createContext<IData | undefined>(undefined);
 
-export default BlogContext;
+interface IData {
+  posts: IPosts[];
+  editions: IEditions[];
+}
+
+interface IBlogProvider {
+  children: ReactNode;
+  value: IData;
+}
+
+export const BlogProvider = ({ children, value }: IBlogProvider) => {
+  return <BlogContext.Provider value={value}>{children}</BlogContext.Provider>;
+};
