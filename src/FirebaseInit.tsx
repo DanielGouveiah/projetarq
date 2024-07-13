@@ -64,8 +64,6 @@ const FirebaseInit = () => {
       blogs,
     };
 
-    console.log(data);
-
     setLoading(false);
 
     return data;
