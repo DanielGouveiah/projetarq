@@ -4,10 +4,10 @@ import BlogItem from "../BlogItem";
 import { scrollToTop } from "../../../utils/ScrollTo";
 
 import { useContext } from "react";
-import BlogContext from "../../../contexts/BlogContext";
+import { BlogContext } from "../../../contexts/BlogContext";
 
 const BlogPosts = () => {
-  const posts = useContext(BlogContext);
+  const data = useContext(BlogContext);
 
   const colors = [
     "bg-cyan-600 hover:text-cyan-900 border-cyan-600",
@@ -27,19 +27,19 @@ const BlogPosts = () => {
     return color;
   };
 
-  if (!posts.length) return <p>Loading</p>;
+  if (!data?.posts!.length) return <p>Loading</p>;
   return (
     <main className="grid w-full">
       <SearchForm />
 
       <section className="grid">
-        <LastBlog value={posts[0]} color={getRandColor()} />
+        <LastBlog value={data?.posts![0]} color={getRandColor()} />
 
         <div className="grid grid-cols-1 w-full md:grid-cols-2 py-12  justify-between gap-4 md:gap-20 px-6 sm:px-10 md:px-32 bg-white">
           <p className="md:col-span-2 text-2xl">Todos os posts</p>
-          {posts.map((post: object, id: number) => {
-            const isPair = posts.length % 2 == 0;
-            const lastOne = id == posts.length - 1;
+          {data?.posts!.map((post: object, id: number) => {
+            const isPair = data?.posts!.length % 2 == 0;
+            const lastOne = id == data?.posts!.length - 1;
             return (
               <BlogItem
                 value={post}

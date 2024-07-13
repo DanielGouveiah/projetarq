@@ -1,78 +1,108 @@
-import Ants from "../../assets/Ants";
+import { ArrowRight } from "@phosphor-icons/react";
+import React from "react";
+import daniel from "../../assets/daniel.jpeg";
+import raul from "../../assets/raul.jpg";
+import vytoria from "../../assets/vytoria.jpg";
+import jovania from "../../assets/jovania.jpg";
 
 const About = () => {
+  const people = [
+    {
+      name: "Jovania Santos",
+      role: "Diretora",
+      instagram: "https://www.instagram.com/jo_vania_s/",
+      img: jovania,
+      color: "text-rose-600",
+    },
+    {
+      name: "Vytoria Albuquerque",
+      role: "Vice-Diretora",
+      instagram: "https://www.instagram.com/vytoriaalbuquerque.arq/",
+      img: vytoria,
+      color: "text-fuchsia-600",
+    },
+    {
+      name: "Daniel Barbosa",
+      role: "Programador",
+      instagram: "https://www.instagram.com/deniels_gouveia/",
+      img: daniel,
+      color: "text-blue-600",
+    },
+    {
+      name: "Raul Monteiro",
+      role: "Editor",
+      instagram: "https://www.instagram.com/raulsimples/",
+      img: raul,
+      color: "text-cyan-600",
+    },
+  ];
   return (
     <section
-      className="relative py-10 sm:py-20 px-2 sm:px-10 grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-y-14 md:gap-y-20"
-      id="about">
-      <div className="absolute -top-16 sm:-top-6 left-1/2 ">
-        <Ants />
-      </div>
+      id="about"
+      aria-label="Sobre nós"
+      className="flex justify-center text-start pb-10 md:pb-20">
+      <div className=" relative container grid md:grid-cols-3 gap-4 md:gap-10 px-4 md:px-0">
+        <div>
+          <h1 className="text-4xl md:text-5xl md:sticky md:top-5 row-span-full">
+            Por trás do projeto...
+          </h1>
+        </div>
 
-      <h2 className="text-3xl md:text-5xl font-semibold text-stone-50 col-span-2 md:col-span-2 md:col-start-2">
-        Sobre nós
-      </h2>
-
-      <div className=" text-stone-50 col-span-full grid md:grid-cols-4 justify-center gap-y-4 py-6">
-        <div className="grid gap-6 col-start-2 col-span-2 leading-loose text-base sm:text-lg bg-red-dark p-6 rounded-xl">
-          <p>
-            Nasceu em{" "}
-            <span className="text-emerald-300">Recife, Pernambuco</span>, a
-            Projetarq Magazine, uma revista de arquitetura com um olhar fresco e
-            inovador. Criada por um grupo de universitárias apaixonadas pela
-            área, a revista busca trazer ao público uma visão jovem e
-            contemporânea da arquitetura, com foco na valorização da cultura e
-            identidade pernambucana.
+        <div className="md:col-span-2 flex flex-col gap-4">
+          <p className="text-xl md:text-2xl text-stone-600 py-2">
+            A Projetarq é um projeto universitário feito por estudantes,
+            contamos com uma equipe pequena e unida e juntos conseguimos fazer o
+            projeto acontecer.
           </p>
 
-          <div className="grid justify-center">
-            <a
-              rel="noopener"
-              href="https://www.instagram.com/projet.arq_magazine/"
-              className="text-xl flex items-center gap-2 text-transparent font-semibold bg-clip-text bg-instagram hover:text-transparent hover:opacity-95">
-              Visite nosso Instagram.
-            </a>
+          <div className="grid gap-6">
+            <h3 className="text-3xl md:py-2 font-medium">Quem somos?</h3>
+            <div className="text-xl md:text-2xl text-stone-600">
+              <p className=" py-1 md:py-3">
+                Somos universitários de Recife-PE e utilizamos de nossos
+                conhecimentos específicos para criar algo grande e belo.
+              </p>
+              <p>
+                O intuíto do projeto além de trazer conteúdos sobre arquitetura,
+                é nos preparar para encarar o mundo e nos tornarmos melhores
+                profissionais!
+              </p>
+            </div>
+          </div>
+
+          <div className="grid gap-6">
+            <h3 className="text-3xl py-2 font-medium ">Nossa tripulação</h3>
+            <ul className="grid md:grid-cols-2 py-6 md:py-10 gap-y-1 md:gap-y-6">
+              {people.map((person) => {
+                return (
+                  <div
+                    className="grid gap-1 md:gap-10 px-4 py-4 md:py-0 md:px-10 bg-stone-50 md:bg-transparent rounded-lg"
+                    key={person.name}>
+                    <div className="flex gap-4">
+                      <img
+                        src={person.img}
+                        alt=""
+                        className={`h-12 w-12 rounded-full border-2 border-stone-200 border-opacity-10`}
+                      />
+                      <div className="grid">
+                        <h4 className={"text-lg font-medium "}>
+                          {person.name}
+                        </h4>
+                        <p className="text-stone-600">{person.role}</p>
+                      </div>
+                    </div>
+                    <a
+                      href={person.instagram}
+                      target="_blank"
+                      className={`flex font-medium gap-2 items-center place-self-end ${person.color} hover:gap-4 hover:scale-110 transition-all`}>
+                      Instagram <ArrowRight size={20} />
+                    </a>
+                  </div>
+                );
+              })}
+            </ul>
           </div>
         </div>
-
-        <div className="grid md:col-start-2 col-span-3 md:col-span-2">
-          <ul className="grid grid-cols-2 gap-y-0 py-10">
-            <li className="grid justify-center bg-red-dark border-r-2 border-b-2 border-red rounded-xl rounded-r-none rounded-bl-none py-2">
-              <div className="grid w-[120px] md:w-[200px] justify-center gap-2 bg-red-dark py-2 px-10 rounded-xl">
-                <span className="text-xl md:text-2xl lg:text-3xl">2023</span>
-                <h3 className="text-stone-400 text-lg md:text-xl">Criação</h3>
-              </div>
-            </li>
-            <li className="grid justify-center bg-red-dark  border-b-2 border-red rounded-xl rounded-l-none rounded-br-none py-2 ">
-              <div className="grid w-[120px] md:w-[200px] justify-center gap-2 bg-red-dark py-2 px-10 rounded-xl">
-                <span className="text-xl md:text-2xl lg:text-3xl">5</span>
-                <h3 className="text-stone-400 text-lg md:text-xl">
-                  Integrantes
-                </h3>
-              </div>
-            </li>
-            <li className="grid justify-center bg-red-dark border-r-2 border-red rounded-xl rounded-r-none rounded-tl-none py-2 ">
-              <div className="grid w-[120px] md:w-[200px] justify-center gap-2 bg-red-dark py-2 px-10 rounded-xl">
-                <span className="text-xl md:text-2xl lg:text-3xl bg-clip-text bg-recife text-transparent">
-                  Recife
-                </span>
-                <h3 className="text-stone-400 text-lg md:text-xl bg-clip-text bg-instagram ">
-                  Cidade
-                </h3>
-              </div>
-            </li>
-            <li className="grid justify-center bg-red-dark border-red rounded-xl rounded-l-none rounded-tr-none py-2 ">
-              <div className="grid w-[120px] md:w-[200px] justify-center gap-2 bg-red-dark py-2 px-10 rounded-xl">
-                <span className="text-xl md:text-2xl lg:text-3xl">1</span>
-                <h3 className="text-stone-400 text-lg md:text-xl">Edições</h3>
-              </div>
-            </li>
-          </ul>
-        </div>
-      </div>
-
-      <div className="absolute -bottom-6 left-1/2">
-        <Ants />
       </div>
     </section>
   );

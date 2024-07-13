@@ -9,7 +9,7 @@
 
   color-scheme: light dark;
   color: #121212;
-  background-color: #121212;
+  background-color: black;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -18,22 +18,22 @@
 }
 
 /* Firefox */
-* {
+html {
   scrollbar-width: thin;
-  scrollbar-color: #a44240 #171717;
+  scrollbar-color: #f97316 #171717;
 }
 
 /* Chrome, Edge, and Safari */
-*::-webkit-scrollbar {
+html:-webkit-scrollbar {
   width: 16px;
 }
 
-*::-webkit-scrollbar-track {
+html::-webkit-scrollbar-track {
   background: #171717;
 }
 
-*::-webkit-scrollbar-thumb {
-  background-color: #a44240;
+html::-webkit-scrollbar-thumb {
+  background-color: #f97316;
   border-radius: 20px;
 }
 
@@ -42,10 +42,6 @@ a {
   color: inherit;
   text-decoration: inherit;
 }
-a:hover {
-  color: #6f1d1b;
-}
-
 body {
   margin: 0;
   display: grid;
@@ -61,6 +57,7 @@ h1 {
 button,
 input {
   outline: none;
+  background: inherit;
 }
 
 button:focus,
@@ -68,10 +65,14 @@ input:focus {
   outline: none;
 }
 
+p {
+  text-wrap: wrap;
+}
+
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
-    background-color: #ffffff;
+    background-color: black;
   }
   a:hover {
     color: #747bff;

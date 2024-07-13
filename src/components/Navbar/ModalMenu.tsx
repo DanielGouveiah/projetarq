@@ -1,29 +1,32 @@
 import React, { useEffect } from "react";
-import { ArrowLeft, HandGrabbing } from "@phosphor-icons/react";
+import { ArrowLeft, ArrowRight, HandGrabbing } from "@phosphor-icons/react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { scrollToTop } from "../../utils/ScrollTo";
-import LogoSimples from "../../assets/LogoSimples";
 
 interface modal {
   callback: () => void;
 }
 
-const links = [
-  {
-    name: "Sobre",
-    target: "about",
-  },
-  {
-    name: "Contatos",
-    target: "contacts",
-  },
-  {
-    name: "Blog",
-    path: "/blog",
-  },
-];
-
 const ModalMenu = ({ callback }: modal) => {
+  const links = [
+    {
+      name: "Edições",
+      target: "editions",
+    },
+    {
+      name: "Social",
+      target: "social",
+    },
+    {
+      name: "Sobre",
+      target: "about",
+    },
+    {
+      name: "Blog",
+      path: "/blog",
+    },
+  ];
+
   const [dragging, setDragging] = React.useState(false);
   const [handVisible, setHandVisible] = React.useState(false);
   const navigate = useNavigate();
@@ -159,49 +162,51 @@ const ModalMenu = ({ callback }: modal) => {
 
   return (
     <div
-      className={`flex flex-col fixed bg-stone-900 top-[0px] left-0 max-h-svh w-screen h-screen box-border z-[100] transition-transform duration-75`}
+      className={`modalMenu flex flex-col fixed top-[0px] left-0 max-h-svh w-screen h-screen box-border z-[100] transition-transform duration-75`}
       ref={menuArea}>
-      <div className="grid grid-cols-2 justify-between w-full px-6 bg-stone-900">
+      <div className="grid grid-cols-2 justify-between w-full px-6 bg-black">
         <div className="flex items-center justify-start">
           <button
             onClick={() => callback()}
-            className="py-6 pr-6 pl-1 text-stone-50 bg-transparent hover:text-red transition-colors duration-700 "
+            className="py-6 pr-6 pl-1 text-stone-50 bg-transparent hover:scale-125 transition duration-400 "
             title="Fechar menu">
-            <ArrowLeft size={32} weight="bold" />
+            <ArrowLeft size={24} weight="bold" />
           </button>
         </div>
-        <div className="flex justify-end">
-          <a title="Logo" className="translate-y-1">
-            <LogoSimples small />
+        <div className="flex justify-end ">
+          <a
+            title="Logo"
+            className="translate-y-1 max-w-[80px] py-4 md:hover:scale-110 transition-all cursor-pointer">
+            <img src="/src/assets/logo.svg" alt="" />
           </a>
         </div>
       </div>
-      <div className="grid items-center grid-rows-2 gap-10 text-2xl bg-stone-900 w-full h-full px-6 py-2 box-border">
-        <nav className="grid gap-1 max-h-[40vh] select-none">
+      <div className="grid items-center grid-rows-2 gap-10 text-2xl bg-black w-full h-full px-6 py-2 box-border">
+        <nav className="grid gap-1 max-h-[40vh] select-none text-white">
           {links.map(({ name, path, target }) => {
             return path ? (
               <NavLink
                 to={path}
                 key={name}
                 onClick={() => menuNav()}
-                onTouchStart={() => menuNav()}
-                className="flex items-center border-b-2  border-transparent py-6 justify-center  text-red-light">
+                className="flex text-center items-center border-b-2  border-transparent py-6 justify-between md:justify-center hover:scale-110 transition-all">
                 {name}
+                <ArrowRight size={24} className="block md:hidden" />
               </NavLink>
             ) : (
               <a
                 key={name}
                 onClick={() => menuNav(true, target)}
-                onTouchEnd={() => menuNav(true, target)}
-                className="flex items-center py-6  border-b-2  border-red-light hover:border-red justify-center  text-red-light cursor-pointer">
+                className="flex text-center items-center py-6 border-b-2  border-stone-900 hover:border-stone-800 cursor-pointer justify-between md:justify-center hover:scale-110 transition-all">
                 {name}
+                <ArrowRight size={24} className="block md:hidden" />
               </a>
             );
           })}
         </nav>
 
         <div
-          className=" flex items-center justify-center text-stone-50 h-full self-end"
+          className=" flex items-center justify-center text-stone-50 h-1/2 self-end"
           onMouseDown={() => mouseDragInit()}
           onTouchStart={() => touchDragInit()}>
           <div
