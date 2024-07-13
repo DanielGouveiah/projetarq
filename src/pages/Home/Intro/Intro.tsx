@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { BlogContext } from "../../../contexts/BlogContext";
+import React from "react";
 
 const Intro = () => {
   // const [bg, setBg] = useState(0);
@@ -40,7 +41,7 @@ const Intro = () => {
       </h1>
       <a
         href={editions[0].edition}
-        className="z-20  border-2 flex flex-col w-fit h-fit justify-item-center py-1 px-4 border-white hover:scale-125 transition">
+        className="z-20  border-2 flex flex-col w-fit h-fit justify-item-center py-1 px-4 border-white md:hover:scale-125 transition">
         <p>Nova</p>
         <p>Edição</p>
       </a>
