@@ -1,29 +1,8 @@
 import { useContext } from "react";
 import { BlogContext } from "../../../contexts/BlogContext";
-import React from "react";
 
 const Intro = () => {
-  // const [bg, setBg] = useState(0);
   const editions = useContext(BlogContext)!.editions;
-  // const ref = useRef<HTMLDivElement>(null);
-  // const bgs = [
-  //   { image: "bg-[url('./src/assets/bg/bg-0.jpg')]" },
-  //   { image: "bg-[url('./src/assets/bg/bg-1.jpg')]" },
-  //   { image: "bg-[url('./src/assets/bg/bg-2.jpg')]" },
-  //   { image: "bg-[url('./src/assets/bg/bg-3.jpg')]" },
-  //   { image: "bg-[url('./src/assets/bg/bg-4.jpg')]" },
-  // ];
-
-  // useEffect(() => {
-  //   const interval = setInterval(() => {
-  //     if (bg < bgs.length - 1) setBg((v) => v + 1);
-  //     else setBg(0);
-
-  //     return () => {
-  //       clearInterval(interval);
-  //     };
-  //   }, 10 * 1000);
-  // }, [bg, bgs.length]);
 
   if (!editions) return;
   return (
