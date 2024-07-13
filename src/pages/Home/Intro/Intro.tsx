@@ -31,7 +31,7 @@ const Intro = () => {
       aria-label="Introdução"
       className={`intro text-white flex flex-col items-center justify-center gap-12 max-h-[620px] h-[90vh] md:h-[60vh] lg:h-[75vh] xl:h-[90vh] `}>
       <div className="absolute left-0 top-0 w-full h-full bg-stone-900">
-        <div className="w-full h-full bg-[url('../../../assets/bg/bg-0.jpg')] bg-cover bg-center"></div>
+        <div className="w-full h-full bg-[url('./assets/bg/bg-0.jpg')] bg-cover bg-center"></div>
       </div>
       <h1 className="text-5xl md:text-6xl z-20 ">
         Projetarq
