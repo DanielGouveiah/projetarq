@@ -1,5 +1,4 @@
 import { ArrowRight } from "@phosphor-icons/react";
-import React from "react";
 import daniel from "../../assets/daniel.jpeg";
 import raul from "../../assets/raul.jpg";
 import vytoria from "../../assets/vytoria.jpg";

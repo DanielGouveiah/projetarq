@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import { useContext } from "react";
 import EditionItem from "./EditionItem";
 import { BlogContext } from "../../../../contexts/BlogContext";
 import { ArrowDown } from "@phosphor-icons/react";

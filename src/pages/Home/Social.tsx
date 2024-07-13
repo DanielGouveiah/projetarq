@@ -1,5 +1,4 @@
 import { ArrowUpRight } from "@phosphor-icons/react";
-import React from "react";
 
 const Social = () => {
   return (

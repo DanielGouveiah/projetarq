@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import { useContext } from "react";
 import LastBlog from "../Blog/LastBlog";
 import { BlogContext } from "../../contexts/BlogContext";
 import { ArrowRight } from "@phosphor-icons/react";
