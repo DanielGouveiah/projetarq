@@ -40,7 +40,7 @@ const EditionItem = ({ data }: data) => {
       ) : (
         <a className="flex flex-col gap-2 relative w-fit h-fit">
           <div
-            className={`bg-stone-800 edition w-full  bg-center bg-cover min-w-[240px] h-[32vh] md:h-[40vh] max-h-[320px] overflow-hidden rounded-lg hover:scale-105 transition duration-400 bg-[url('./src/assets/breve.jpg')]`}
+            className={`bg-stone-800 edition w-full  bg-center bg-cover min-w-[240px] h-[32vh] md:h-[40vh] max-h-[320px] overflow-hidden rounded-lg hover:scale-105 transition duration-400 bg-[url('../src/assets/breve.jpg')]`}
           />
 
           <div className="flex flex-col gap-1 text-stone-900">
